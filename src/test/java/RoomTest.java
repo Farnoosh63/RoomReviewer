@@ -9,4 +9,10 @@ public class RoomTest {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
+  @Test
+ public void Room_instantiatesCorrectly_true() {
+   Room newRoom= new Room("room", "400 SW 6th Ave, Portland, OR, 97202", "http://lorempixel.com/400/200/");
+   assertEquals(true, newRoom instanceof Room);
+ }
+
 }
