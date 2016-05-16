@@ -13,10 +13,10 @@ import org.sql2o.*;
     try(Connection con = DB.sql2o.open()) {
       String deleteRoomsQuery = "DELETE FROM rooms *;";
       String deleteReviewsQuery = "DELETE FROM reviews *;";
-      String deleteRoomsReviewsQuery = "DELETE FROM rooms_reviews *;";
+      String deleteUsersQuery = "DELETE FROM users *;";
       con.createQuery(deleteRoomsQuery).executeUpdate();
       con.createQuery(deleteReviewsQuery).executeUpdate();
-      con.createQuery(deleteRoomsReviewsQuery).executeUpdate();
+      con.createQuery(deleteUsersQuery).executeUpdate();
     }
   }
 }

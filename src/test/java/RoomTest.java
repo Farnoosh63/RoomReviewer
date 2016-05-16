@@ -63,29 +63,43 @@ public class RoomTest {
      Room savedRoom = Room.find(newRoom.getId());
      assertTrue(newRoom.equals(savedRoom));
    }
+// when we create user object we run this test
+  //  @Test
+  //  public void add_addsReviewsToRoom_true() {
+  //    String roomType ="type";
+  //    String roomAddress ="address";
+  //    String roomUrl ="url";
+  //    Room newRoom = new Room(roomType, roomAddress, roomUrl);
+  //    newRoom.save();
+  //    User newUser = new User("user_name", "user_password");
+  //    newUser.save();
+  //    Review newReview = new Review ("description", "2016-03-15",3, newRoom.getId(), newUser.getId());
+  //    newReview.save();
+  //    assertTrue(newRoom.getReviews().contains(newReview));
+  //  }
 
    @Test
-   public void add_addsReviewsToRoom_true() {
-     String roomType ="type";
-     String roomAddress ="address";
-     String roomUrl ="url";
-     Room newRoom = new Room(roomType, roomAddress, roomUrl);
-     newRoom.save();
-     Review newReview = new Review ("description", "user_name", "2016-03-15",3);
-     newReview.save();
-     newRoom.addReview(newReview);
-     assertTrue(newRoom.getReviews().equals(newReview));
-   }
+     public void update_RoomAddress_true() {
+       String roomType ="type";
+       String roomAddress ="address";
+       String roomUrl ="url";
+       Room newRoom = new Room(roomType, roomAddress, roomUrl);
+       newRoom.save();
+       newRoom.update("address2");
+       assertEquals("address2", Room.find(newRoom.getId()).getAddress());
+     }
 
-  //  @Test
-  //    public void update_Room_true() {
-  //
-  //    }
-   //
-  //    @Test
-  //    public void delete_Room_true() {
-   //
-  //    }
+     @Test
+     public void delete_Room_true() {
+       String roomType ="type";
+       String roomAddress ="address";
+       String roomUrl ="url";
+       Room newRoom = new Room(roomType, roomAddress, roomUrl);
+       newRoom.save();
+       int newRoomId = newRoom.getId();
+       newRoom.delete();
+       assertEquals(null, Room.find(newRoomId));
+     }
 
 
 }

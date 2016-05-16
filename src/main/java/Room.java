@@ -64,9 +64,32 @@ public class Room {
       return room;
     }
   }
-public void addReview(){
-  try (Connection con = DB.sql2o.open()){
-    String roomsTable = "SELECT * FROM reviews WHERE id=:id"
-}
+  public List<Review>  getReviews(){
+    try (Connection con = DB.sql2o.open()){
+      String reviewsTable = "SELECT * FROM reviews WHERE room_id=:id";
+      return con.createQuery(reviewsTable)
+      .addParameter("id", this.id)
+      .executeAndFetch(Review.class);
+    }
+  }
+
+  public void update(String address) {
+    try(Connection con = DB.sql2o.open()) {
+      String roomsTable = "UPDATE rooms SET address = :address WHERE id = :id";
+      con.createQuery(roomsTable)
+      .addParameter("address", address)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String roomsTable = "DELETE FROM rooms WHERE id = :id;";
+      con.createQuery(roomsTable)
+      .addParameter("id", id)
+      .executeUpdate();
+    }
+  }
 
 }
