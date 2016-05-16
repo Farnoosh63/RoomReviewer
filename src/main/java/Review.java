@@ -10,13 +10,13 @@ public class Review {
   private int rating;
   private int id;
 
-  public Review(String user_name, Date date_created, String description, int rating) {
+  public Review(String user_name, String description, int rating) {
     this.user_name = user_name;
     this.date_created = date_created;
     this.description = description;
     this.rating = rating;
   }
-
+  
   public int getId() {
     return id;
   }
