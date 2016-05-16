@@ -19,7 +19,7 @@ public class ReviewTest {
 //WILL INSTANTIATE WITH DESCRIPTION
   @Test
   public void getDescription_reviewInstantiatesWithDescription_String() {
-    Review testReview = new Review( "magnifico", 5, 1, 1);
+    Review testReview = new Review("magnifico", 5, 1, 1);
     assertEquals("magnifico", testReview.getDescription());
   }
 
