@@ -37,20 +37,31 @@ public class RoomTest {
      String roomType ="type";
      String roomAddress ="address";
      String roomUrl ="url";
-     Room expectedRoom = new Room(roomType, roomAddress, roomUrl);
-     expectedRoom.save();
-     assertTrue(Room.all().get(0).equals(expectedRoom));
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     assertTrue(Room.all().get(0).equals(newRoom));
    }
    @Test
    public void save_assignsIdToRoom_int() {
      String roomType ="type";
      String roomAddress ="address";
      String roomUrl ="url";
-     Room expectedRoom = new Room(roomType, roomAddress, roomUrl);
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
      Room savedRoom = Room.all().get(0);
-     assertEquals(expectedRoom.getId(), savedRoom.getId());
+     assertEquals(newRoom.getId(), savedRoom.getId());
    }
 
+   @Test
+   public void find_findsTaskInDatabase_true() {
+     String roomType ="type";
+     String roomAddress ="address";
+     String roomUrl ="url";
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     Room savedRoom = Room.find(newRoom.getId());
+     assertTrue(newRoom.equals(savedRoom));
+   }
 
 
 
