@@ -36,9 +36,10 @@ SET default_with_oids = false;
 CREATE TABLE reviews (
     id integer NOT NULL,
     description character varying,
-    user_name character varying,
     date_created timestamp without time zone,
-    rating integer
+    rating integer,
+    room_id integer,
+    user_id integer
 );
 
 
@@ -101,23 +102,23 @@ ALTER SEQUENCE rooms_id_seq OWNED BY rooms.id;
 
 
 --
--- Name: rooms_reviews; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
-CREATE TABLE rooms_reviews (
+CREATE TABLE users (
     id integer NOT NULL,
-    room_id integer,
-    review_id integer
+    name character varying,
+    password character varying
 );
 
 
-ALTER TABLE rooms_reviews OWNER TO "Guest";
+ALTER TABLE users OWNER TO "Guest";
 
 --
--- Name: rooms_reviews_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
-CREATE SEQUENCE rooms_reviews_id_seq
+CREATE SEQUENCE users_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -125,13 +126,13 @@ CREATE SEQUENCE rooms_reviews_id_seq
     CACHE 1;
 
 
-ALTER TABLE rooms_reviews_id_seq OWNER TO "Guest";
+ALTER TABLE users_id_seq OWNER TO "Guest";
 
 --
--- Name: rooms_reviews_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
-ALTER SEQUENCE rooms_reviews_id_seq OWNED BY rooms_reviews.id;
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
@@ -152,14 +153,14 @@ ALTER TABLE ONLY rooms ALTER COLUMN id SET DEFAULT nextval('rooms_id_seq'::regcl
 -- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
-ALTER TABLE ONLY rooms_reviews ALTER COLUMN id SET DEFAULT nextval('rooms_reviews_id_seq'::regclass);
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
 -- Data for Name: reviews; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY reviews (id, description, user_name, date_created, rating) FROM stdin;
+COPY reviews (id, description, date_created, rating, room_id, user_id) FROM stdin;
 \.
 
 
@@ -186,18 +187,18 @@ SELECT pg_catalog.setval('rooms_id_seq', 1, false);
 
 
 --
--- Data for Name: rooms_reviews; Type: TABLE DATA; Schema: public; Owner: Guest
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY rooms_reviews (id, room_id, review_id) FROM stdin;
+COPY users (id, name, password) FROM stdin;
 \.
 
 
 --
--- Name: rooms_reviews_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('rooms_reviews_id_seq', 1, false);
+SELECT pg_catalog.setval('users_id_seq', 1, false);
 
 
 --
@@ -217,11 +218,11 @@ ALTER TABLE ONLY rooms
 
 
 --
--- Name: rooms_reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
-ALTER TABLE ONLY rooms_reviews
-    ADD CONSTRAINT rooms_reviews_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
