@@ -76,7 +76,7 @@ public class User {
       try(Connection con = DB.sql2o.open()) {
         String sql = "UPDATE users SET name = :newName WHERE id = :id;";
         con.createQuery(sql)
-          .addParameter("user_name", newUser_name)
+          .addParameter("name", newName)
           .addParameter("id", id)
           .executeUpdate();
       }

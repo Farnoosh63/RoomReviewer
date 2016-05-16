@@ -64,19 +64,19 @@ public class RoomTest {
      assertTrue(newRoom.equals(savedRoom));
    }
 // when we create user object we run this test
-  //  @Test
-  //  public void add_addsReviewsToRoom_true() {
-  //    String roomType ="type";
-  //    String roomAddress ="address";
-  //    String roomUrl ="url";
-  //    Room newRoom = new Room(roomType, roomAddress, roomUrl);
-  //    newRoom.save();
-  //    User newUser = new User("user_name", "user_password");
-  //    newUser.save();
-  //    Review newReview = new Review ("description", "2016-03-15",3, newRoom.getId(), newUser.getId());
-  //    newReview.save();
-  //    assertTrue(newRoom.getReviews().contains(newReview));
-  //  }
+   @Test
+   public void add_addsReviewsToRoom_true() {
+     String roomType ="type";
+     String roomAddress ="address";
+     String roomUrl ="url";
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     User newUser = new User("user_name", "user_password");
+     newUser.save();
+     Review newReview = new Review ("description",3 , newRoom.getId(), newUser.getId());
+     newReview.save();
+     assertTrue(newRoom.getReviews().contains(newReview));
+   }
 
    @Test
      public void update_RoomAddress_true() {
