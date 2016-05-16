@@ -1,1 +1,1 @@
-web: ./build/install/band-tracker/bin/band-tracker
+web: ./build/install/room-review/bin/room-review
