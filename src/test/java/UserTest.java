@@ -28,4 +28,38 @@ public class UserTest {
     newUser.save();
     assertEquals(User.all().size(), 1);
   }
+
+  @Test
+  public void User_twoUserNamesAreEqual_true() {
+    User newUser = new User("John Smith", "password");
+    newUser.save();
+    User secondUser = new User("John Smith", "password");
+    secondUser.save();
+    assertTrue(newUser.getName().equals(secondUser.getName()));
+  }
+
+  @Test
+  public void find_findsUserInDatabase_true() {
+    User newUser = new User("John Smith", "password");
+    newUser.save();
+    User foundUser = User.find(newUser.getId());
+    assertTrue(foundUser.getName().equals(newUser.getName()));
+  }
+
+  @Test
+  public void delete_deletesUserFromDB_true() {
+    User newUser = new User("John Smith", "password");
+    newUser.save();
+    newUser.delete();
+    assertTrue(newUser.all().size() == 0);
+  }
+
+  @Test
+  public void update_updateUserName_name() {
+    User newUser = new User("John Smith", "password");
+    newUser.save();
+    newUser.update("Bob bob", "newPassword");
+    assertEquals("Bob bob", User.find(newUser.getId()).getName());
+  }
+
 }

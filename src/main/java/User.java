@@ -74,16 +74,16 @@ public class User {
   public void update(String newName, String newPassword) {
     if(newName.trim().length() != 0) {
       try(Connection con = DB.sql2o.open()) {
-        String sql = "UPDATE users SET name = :newName WHERE id = :id;";
+        String sql = "UPDATE users SET name = :name WHERE id = :id;";
         con.createQuery(sql)
-          .addParameter("user_name", newUser_name)
+          .addParameter("name", newName)
           .addParameter("id", id)
           .executeUpdate();
       }
     }
     if(newPassword.trim().length() != 0) {
       try(Connection con = DB.sql2o.open()) {
-        String sql = "UPDATE users SET password = :newPassword WHERE id = :id;";
+        String sql = "UPDATE users SET password = :password WHERE id = :id;";
         con.createQuery(sql)
           .addParameter("password", newPassword)
           .addParameter("id", id)
