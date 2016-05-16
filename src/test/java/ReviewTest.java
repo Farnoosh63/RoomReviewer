@@ -31,10 +31,12 @@ public class ReviewTest {
   }
 
   // WILL CHECK TO MAKE SURE DATE IS WORKING
-  // @Test
-  // public void getDate_reviewWithDate() {
-  //   Review testReview = new Review("")
-  // }
+  @Test
+  public void getDate_reviewWithDate() {
+    Review testReview = new Review("Mark Twain", "T'was awful, indeed", 2);
+    java.util.Date currentDate = new java.util.Date();
+    assertEquals(currentDate, testReview.getDate());
+  }
 
   //WILL EMPTY STORED FROM TEST DATABASE AFTER EACH TEST
   @Test
@@ -42,10 +44,22 @@ public class ReviewTest {
     assertEquals(Review.all().size(), 0);
   }
 
-// //WILL
-//   @Test
-//   public void getId_assignsIdToObject() {
-//     Review myReview = new Review("Shakira", "Muy Bien" 4);
-//     myReview.save
-//   }
+
+// //WILL ADD ID TO OBJECT
+  @Test
+  public void getId_assignsIdToObject() {
+    Review myReview = new Review("Shakira", "Muy Bien", 4);
+    myReview.save();
+    Review savedReview = Review.all().get(0);
+    assertEquals(myReview.getId(), savedReview.getId());
+  }
+
+  //GET rEVIEW FROM DATABASE
+  @Test
+  public void find_findsReviewInDatabase_true() {
+    Review myReview = new Review("Squiggly Giggly", "Twas wiggly", 3);
+    myReview.save();
+    Review saveReview = Review.find(myReview.getId());
+    assertTrue(myReview.equals(saveReview));
+  }
 }
