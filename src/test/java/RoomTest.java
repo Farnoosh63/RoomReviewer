@@ -3,6 +3,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Date;
 
 public class RoomTest {
 
@@ -33,7 +34,7 @@ public class RoomTest {
   }
 
    @Test
-   public void save_saveRoomIntoDataBase_true() {
+   public void save_savesRoomIntoDataBase_true() {
      String roomType ="type";
      String roomAddress ="address";
      String roomUrl ="url";
@@ -53,7 +54,7 @@ public class RoomTest {
    }
 
    @Test
-   public void find_findsTaskInDatabase_true() {
+   public void find_findsRoomInDatabase_true() {
      String roomType ="type";
      String roomAddress ="address";
      String roomUrl ="url";
@@ -63,7 +64,28 @@ public class RoomTest {
      assertTrue(newRoom.equals(savedRoom));
    }
 
+   @Test
+   public void add_addsReviewsToRoom_true() {
+     String roomType ="type";
+     String roomAddress ="address";
+     String roomUrl ="url";
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     Review newReview = new Review ("description", "user_name", "2016-03-15",3);
+     newReview.save();
+     newRoom.addReview(newReview);
+     assertTrue(newRoom.getReviews().equals(newReview));
+   }
 
+  //  @Test
+  //    public void update_Room_true() {
+  //
+  //    }
+   //
+  //    @Test
+  //    public void delete_Room_true() {
+   //
+  //    }
 
 
 }

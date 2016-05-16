@@ -54,8 +54,19 @@ public class Room {
         .executeUpdate()
         .getKey();
       }
-
   }
-
+  public static Room find(int id){
+    try (Connection con = DB.sql2o.open()){
+      String roomsTable = "SELECT * FROM rooms WHERE id=:id";
+      Room room = con.createQuery(roomsTable)
+      .addParameter("id", id)
+      .executeAndFetchFirst(Room.class);
+      return room;
+    }
+  }
+public void addReview(){
+  try (Connection con = DB.sql2o.open()){
+    String roomsTable = "SELECT * FROM reviews WHERE id=:id"
+}
 
 }
