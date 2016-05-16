@@ -1,0 +1,17 @@
+<h1>All Bands</h1>
+
+<ul>
+  #foreach ($band in $bands)
+    <li><a href="/bands/$band.getId()">$band.getName()</a></li>
+  #end
+</ul>
+
+<p>Add a new band:</p>
+
+<form action="/bands" method="post">
+  <label for="name">Band name</label>
+  <input id="name" name="name" type="text" required>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<p><a href="/">Home</a></p>

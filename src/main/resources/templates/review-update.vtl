@@ -1,0 +1,16 @@
+<h2>Edit $venue.getName():</h2>
+
+<form action="/venues/$venue.getId()/edit" method="post">
+  <input id="venue_update_id" name="venue_update_id" type="hidden" value="$venue.getId()">
+  <label for="venue-update">Update to:</label>
+  <input id="venue-update" name="venue-update" type="text" required>
+  <button type="submit" class="btn btn-warning" id="btn-update-venue">Update</button>
+</form>
+
+<a href="/$venue.all()">Return to venues</a>
+
+<ul>
+  #foreach ($venue in $venues)
+    <li><a href="/venue.getId()">$venue.getName()</a></li>
+  #end
+</ul>
