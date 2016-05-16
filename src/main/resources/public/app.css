@@ -1,0 +1,9 @@
+#page-container {
+  width: 760px;
+  margin: auto;
+  background: red;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
