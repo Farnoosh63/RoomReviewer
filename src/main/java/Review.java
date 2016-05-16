@@ -3,21 +3,31 @@ import org.sql2o.*;
 import java.util.*;
 
 public class Review {
-  private String user_name;
   private Date date_created;
   private String description;
   private int rating;
   private int id;
+  private int room_id;
+  private int user_id;
 
-  public Review(String user_name, String description, int rating) {
-    this.user_name = user_name;
+  public Review(String description, int rating, int room_id, int user_id) {
     this.date_created = date_created;
     this.description = description;
     this.rating = rating;
+    this.room_id = room_id;
+    this.user_id = user_id;
   }
 
   public int getId() {
     return id;
+  }
+
+  public int getUserId() {
+    return user_id;
+  }
+
+  public int getRoomId() {
+    return room_id;
   }
 
   public int getRating() {
@@ -33,32 +43,29 @@ public class Review {
     return description;
   }
 
-  public String getUserName() {
-    return user_name;
-  }
-
   @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof Review)) {
       return false;
     } else {
       Review newReview = (Review) obj;
-      return this.getId() == newReview.getId() && this.getRating() == newReview.getRating() &&
-      this.getUserName().equals(newReview.getUserName()) &&
+      return this.getId() == newReview.getId() &&
+      this.getRating() == newReview.getRating() &&
+      this.getUserId() == newReview.getUserId() &&
+      this.getRoomId() == newReview.getRoomId() &&
       this.getDescription().equals(newReview.getDescription());
-      // &&
-      // this.getDate().equals(newReview.getDate());
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO reviews(description, user_name, date_created, rating) VALUES (:description, :user_name, :date_created, :rating)";
+      String sql = "INSERT INTO reviews(description, date_created, rating, room_id, user_id) VALUES (:description, :date_created, :rating, :room_id, :user_id)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("rating", this.rating)
-        .addParameter("user_name", this.user_name)
         .addParameter("description", this.description)
         .addParameter("date_created", this.getDate())
+        .addParameter("room_id", this.getRoomId())
+        .addParameter("user_id", this.getUserId())
         .executeUpdate()
         .getKey();
     }
@@ -91,17 +98,7 @@ public class Review {
     }
   }
 
-  public void update(String newUser_name, String newDescription, int newRating) {
-    if(newUser_name.trim().length() != 0) {
-      try(Connection con = DB.sql2o.open()) {
-        String sql = "UPDATE reviews SET user_name = :newUser_name WHERE id = :id;";
-        con.createQuery(sql)
-          .addParameter("user_name", newUser_name)
-          .addParameter("id", id)
-          .executeUpdate();
-      }
-    }
-
+  public void update( String newDescription, int newRating) {
     if(newDescription.trim().length() != 0) {
       try(Connection con = DB.sql2o.open()) {
         String sql = "UPDATE reviews SET description = :newDescription WHERE id = :id;";
@@ -111,7 +108,6 @@ public class Review {
           .executeUpdate();
       }
     }
-
     if(newRating != 0) {
       try(Connection con = DB.sql2o.open()) {
         String sql = "UPDATE reviews SET rating = :newRating WHERE id = :id;";
