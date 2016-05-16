@@ -1,7 +1,6 @@
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.ArrayList;
 import org.sql2o.*;
+import java.util.*;
 
 public class Review {
   private String user_name;
@@ -16,7 +15,7 @@ public class Review {
     this.description = description;
     this.rating = rating;
   }
-  
+
   public int getId() {
     return id;
   }
@@ -46,8 +45,9 @@ public class Review {
       Review newReview = (Review) obj;
       return this.getId() == newReview.getId() && this.getRating() == newReview.getRating() &&
       this.getUserName().equals(newReview.getUserName()) &&
-      this.getDescription().equals(newReview.getDescription()) &&
-      this.getDate().equals(newReview.getDate());
+      this.getDescription().equals(newReview.getDescription());
+      // &&
+      // this.getDate().equals(newReview.getDate());
     }
   }
 
@@ -112,7 +112,7 @@ public class Review {
       }
     }
 
-    if(newRating != null) {
+    if(newRating != 0) {
       try(Connection con = DB.sql2o.open()) {
         String sql = "UPDATE reviews SET rating = :newRating WHERE id = :id;";
         con.createQuery(sql)
