@@ -1,3 +1,6 @@
 <h1>$user.getName()'s Review</h1>
-<h3>Room Type: $foundRoom.getType()</h3>
-<h3>Room Review:
+<h3>Room Type: $room.getType()</h3>
+<h3>Room Review: $review.getDescription()</h3>
+<h3>Room Rating: <img class="starPic" src=/images/$review.getRating()></h3>
+<h3>Room Picture: <img class="roomPic" src="$room.getUrl()"></h3>
+<h3>Room Address: $room.getAddress()</h3>

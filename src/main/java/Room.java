@@ -91,4 +91,13 @@ public class Room {
     }
   }
 
+  public static List<Room> searchRooms(String input) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM rooms WHERE address LIKE :input";
+      return con.createQuery(sql)
+        .addParameter("input", input)
+        .executeAndFetch(Room.class);
+    }
+  }
+
 }

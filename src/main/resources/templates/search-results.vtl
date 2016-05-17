@@ -1,0 +1,6 @@
+<h1>Search results</h1>
+<ul>
+  #foreach ($foundRoom in $foundRooms)
+    <li class="searchResult"><img class="roomPic" src=$foundRoom.getUrl()>$foundRoom.getAddress()</li>
+  #end
+</ul>

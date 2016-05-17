@@ -35,6 +35,19 @@ public class App {
       return null;
     });
 
+    get("/searchResults", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      if (request.queryParams("search") != null) {
+        String search = request.queryParams("search");
+        List<Room> foundRooms = Room.searchRooms("%" + search + "%");
+        model.put("foundRooms", foundRooms);
+      }
+        
+        model.put("template", "templates/search-results.vtl");
+        return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
     post("/user/review/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String roomType = request.queryParams("roomType");
