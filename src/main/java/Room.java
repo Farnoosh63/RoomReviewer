@@ -3,7 +3,6 @@ import org.sql2o.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
 public class Room {
   private int id;
   private String type;
@@ -89,6 +88,15 @@ public class Room {
       con.createQuery(roomsTable)
       .addParameter("id", id)
       .executeUpdate();
+    }
+  }
+
+  public static List<Room> searchRooms(String input) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM rooms WHERE address LIKE :input";
+      return con.createQuery(sql)
+        .addParameter("input", input)
+        .executeAndFetch(Room.class);
     }
   }
 

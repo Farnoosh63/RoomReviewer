@@ -5,12 +5,12 @@ import java.util.*;
 public class Review {
   private Date date_created;
   private String description;
-  private int rating;
+  private String rating;
   private int id;
   private int room_id;
   private int user_id;
 
-  public Review(String description, int rating, int room_id, int user_id) {
+  public Review(String description, String rating, int room_id, int user_id) {
     this.date_created = date_created;
     this.description = description;
     this.rating = rating;
@@ -30,7 +30,7 @@ public class Review {
     return room_id;
   }
 
-  public int getRating() {
+  public String getRating() {
     return rating;
   }
 
@@ -50,7 +50,7 @@ public class Review {
     } else {
       Review newReview = (Review) obj;
       return this.getId() == newReview.getId() &&
-      this.getRating() == newReview.getRating() &&
+      this.getRating().equals(newReview.getRating()) &&
       this.getUserId() == newReview.getUserId() &&
       this.getRoomId() == newReview.getRoomId() &&
       this.getDescription().equals(newReview.getDescription());

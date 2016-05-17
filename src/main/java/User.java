@@ -71,6 +71,15 @@ public class User {
     }
   }
 
+  public List<Review> getReviews() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM reviews WHERE user_id = :user_id";
+      return con.createQuery(sql)
+        .addParameter("user_id", this.id)
+        .executeAndFetch(Review.class);
+    }
+  }
+
   public void update(String newName, String newPassword) {
     if(newName.trim().length() != 0) {
       try(Connection con = DB.sql2o.open()) {

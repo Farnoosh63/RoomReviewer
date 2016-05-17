@@ -73,33 +73,33 @@ public class RoomTest {
      newRoom.save();
      User newUser = new User("user_name", "user_password");
      newUser.save();
-     Review newReview = new Review ("description",3 , newRoom.getId(), newUser.getId());
+     Review newReview = new Review ("description", "3", newRoom.getId(), newUser.getId());
      newReview.save();
      assertTrue(newRoom.getReviews().contains(newReview));
    }
 
    @Test
-     public void update_RoomAddress_true() {
-       String roomType ="type";
-       String roomAddress ="address";
-       String roomUrl ="url";
-       Room newRoom = new Room(roomType, roomAddress, roomUrl);
-       newRoom.save();
-       newRoom.update("address2");
-       assertEquals("address2", Room.find(newRoom.getId()).getAddress());
-     }
+    public void update_RoomAddress_true() {
+     String roomType ="type";
+     String roomAddress ="address";
+     String roomUrl ="url";
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     newRoom.update("address2");
+     assertEquals("address2", Room.find(newRoom.getId()).getAddress());
+   }
 
-     @Test
-     public void delete_Room_true() {
-       String roomType ="type";
-       String roomAddress ="address";
-       String roomUrl ="url";
-       Room newRoom = new Room(roomType, roomAddress, roomUrl);
-       newRoom.save();
-       int newRoomId = newRoom.getId();
-       newRoom.delete();
-       assertEquals(null, Room.find(newRoomId));
-     }
+   @Test
+   public void delete_Room_true() {
+     String roomType ="type";
+     String roomAddress ="address";
+     String roomUrl ="url";
+     Room newRoom = new Room(roomType, roomAddress, roomUrl);
+     newRoom.save();
+     int newRoomId = newRoom.getId();
+     newRoom.delete();
+     assertEquals(null, Room.find(newRoomId));
+   }
 
 
 }
