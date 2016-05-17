@@ -62,4 +62,12 @@ public class UserTest {
     assertEquals("Bob bob", User.find(newUser.getId()).getName());
   }
 
+  @Test
+  public void getReviews_userGetsReviews_true() {
+    User newUser = new User("John Smith", "password");
+    newUser.save();
+    Review newReview = new Review ("description", "3", 1, newUser.getId());
+    newReview.save();
+    assertTrue(newUser.getReviews().size() == 1);
+  }
 }

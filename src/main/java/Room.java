@@ -3,7 +3,6 @@ import org.sql2o.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
 public class Room {
   private int id;
   private String type;

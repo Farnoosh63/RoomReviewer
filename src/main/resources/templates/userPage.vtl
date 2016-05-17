@@ -1,0 +1,28 @@
+<h1>Create a Review</h1>
+<h2>Welcome $userName.getName()</h2>
+<form action="/user/review/new" method="post">
+  <input for="userId" name="userId" type="hidden" value="$userName.getId()"></input>
+  <label for="roomType">Room type</label>
+  <select class="form-control" name="roomType" id="roomType">
+    <option name="roomType" id="roomType" value="apartment">Apartment</option>
+    <option name="roomType" id="roomType" value="loft">Loft</option>
+    <option name="roomType" id="roomType" value="apartment">Room in a house</option>
+  </select>
+  <label for="address">Address</label>
+  <input class="form-control"name="address" id="address"></label>
+  <label for="rating">Rating</label>
+  <select class="form-control" name="rating" id="rating">
+    <option name="rating" selected="selected" disabled>Select a rating:</option>
+    <option name="rating" id="rating" value="1">1 Star</option>
+    <option name="rating" id="rating" value="2">2 Star</option>
+    <option name="rating" id="rating" value="3">3 Star</option>
+    <option name="rating" id="rating" value="4">4 Star</option>
+    <option name="rating" id="rating" value="5">5 Star</option>
+  </select>
+  <label for="image">Upload an Image</label>
+  <input class="form-control" name="image" id="image"></input>
+  <label for="review">Review</label>
+  <input class="form-control" name="review" id="review"></input>
+
+  <button type="submit" class="btn btn-primary">Submit Review</button>
+</form>

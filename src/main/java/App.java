@@ -7,16 +7,6 @@ import java.util.List;
 
 public class App {
   public static void main (String[] args){
-    ProcessBuilder process = new ProcessBuilder();
-     Integer port;
-     if (process.environment().get("PORT") != null) {
-         port = Integer.parseInt(process.environment().get("PORT"));
-     } else {
-         port = 4567;
-     }
-
-    setPort(port);
-
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
@@ -25,5 +15,55 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/user/:id", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      User newUser = User.find(Integer.parseInt(request.params(":id")));
+      model.put("userName", newUser);
+      model.put("template", "templates/userPage.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/user/new", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String userName = request.queryParams("userName");
+      String password = request.queryParams("password");
+      User newUser = new User(userName, password);
+      newUser.save();
+      System.out.println(newUser.getName());
+      response.redirect("http://localhost:4567/user/" + newUser.getId());
+      return null;
+    });
+
+    post("/user/review/new", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String roomType = request.queryParams("roomType");
+      String address = request.queryParams("address");
+      String rating = request.queryParams("rating");
+      String image = request.queryParams("image");
+      String review = request.queryParams("review");
+      Room newRoom = new Room(roomType, address, image);
+      newRoom.save();
+      User newUser = User.find(Integer.parseInt(request.queryParams("userId")));
+      Review newReview = new Review(review, rating, newRoom.getId(), newUser.getId());
+      newReview.save();
+      response.redirect("/user/" + newUser.getId() + "/review/" + newReview.getId());
+      return null;
+    });
+
+    get("/user/:id/review/:rid", (request, reponse) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Review inputtedReview = Review.find(Integer.parseInt(request.params(":rid")));
+      User foundUser = User.find(Integer.parseInt(request.params(":id")));
+      Room foundRoom = Room.find(inputtedReview.getRoomId());
+      model.put("user", foundUser);
+      model.put("room", foundRoom);
+      model.put("review", inputtedReview);
+      model.put("template", "templates/review.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
   }
+
 }
