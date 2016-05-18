@@ -161,8 +161,6 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 --
 
 COPY reviews (id, description, date_created, room_id, user_id, rating) FROM stdin;
-1	asd	2016-05-17 13:04:21.073	12	25	\N
-2	asd	2016-05-17 13:04:45.097	13	26	\N
 \.
 
 
@@ -178,19 +176,6 @@ SELECT pg_catalog.setval('reviews_id_seq', 2, true);
 --
 
 COPY rooms (id, type, address, url) FROM stdin;
-1	Apartment	s	s
-2	Room in a house	s	s
-3	Apartment	ssss	sss
-4	loft	ss	ss
-5	apartment	ssss	sss
-6	apartment	s	sss
-7	apartment	sd	ss
-8	apartment	asd	asd
-9	apartment	asd	asd
-10	apartment	asd	asd
-11	apartment	asd	asd
-12	apartment	asd	
-13	apartment		
 \.
 
 
@@ -206,35 +191,6 @@ SELECT pg_catalog.setval('rooms_id_seq', 13, true);
 --
 
 COPY users (id, name, password) FROM stdin;
-1	user.getNamfde()	fd
-2	username1	password1
-3	username1	password1
-4	username1	password1
-5	asd	asd
-6	as	as
-7	asd	asd
-8	sad	asd
-9	asd	asd
-10	asd	asd
-11	sss	sss
-12	sad	sss
-13	sss	sss
-14	sss	sss
-15	s	s
-16	s	s
-17	sd	sd
-18	asd	asd
-19	asd	asd
-20	asd	asd
-21	sad	asd
-22	asd	asd
-23	asd	asd
-24	asd	asd
-25	as	sd
-26	asd	asd
-27	asd	asd
-28	asd	asd
-29	asd	asd
 \.
 
 
