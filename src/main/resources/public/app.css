@@ -63,15 +63,34 @@ h1 {
  transition: all 3s ease;
 }
 
-/*#search {
-  width:650px;
-}*/
-
-#magnify-glass {
+/*farnoosh css*/
+body.aboutUs {
+   background-image: none !important;
 }
 
+ul.navbar-nav {
+    float: left;
+    margin: 40px;
+}
 
+div.container {
+  margin-top: 70px;
+}
 
+.navbar-nav.navbar-right:last-child {
+     margin-right: 15px;
+}
+
+/*.navbar-right {
+  float: none !important;;
+}*/
+
+.navbar-form .form-control {
+  width: 400px;
+  display: inline-block;
+}
+
+/*end of farnoosh css*/
 
 
 /*room pics*/

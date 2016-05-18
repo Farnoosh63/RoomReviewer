@@ -42,7 +42,7 @@ public class App {
         List<Room> foundRooms = Room.searchRooms("%" + search + "%");
         model.put("foundRooms", foundRooms);
       }
-        
+
         model.put("template", "templates/search-results.vtl");
         return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -76,6 +76,17 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/aboutUs", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/aboutUs.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/contact", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/contact.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
   }
 
