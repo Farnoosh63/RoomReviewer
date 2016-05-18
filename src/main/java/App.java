@@ -42,7 +42,7 @@ public class App {
         List<Room> foundRooms = Room.searchRooms("%" + search + "%");
         model.put("foundRooms", foundRooms);
       }
-        
+
         model.put("template", "templates/search-results.vtl");
         return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

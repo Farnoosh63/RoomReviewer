@@ -70,16 +70,31 @@ h1 {
 #magnify-glass {
 }
 
-
-
-
-
-/*room pics*/
+/*Styling for search Page*/
 .roomPic {
-  width: 40%;
-  height: 30%;
+  max-width: 320px;
+  max-height: 320px;
+  border:1px solid #021a40;
+}
+
+.post-thumb img {
+  display: block;
+}
+
+.post-thumb {
+  float: left;
+}
+
+.post-content {
+  margin-left: 340px;
+}
+
+.post-container {
+    margin: 20px 20px 0 0;
+    border: 1px solid #333;
+    overflow: auto;
 }
 
 .starPic {
-  width: 150px;
+  width: 95px;
 }
