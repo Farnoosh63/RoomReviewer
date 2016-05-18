@@ -80,8 +80,9 @@ ul.navbar-nav {
     margin: 40px;
 }
 
-div.container {
-  margin-top: 70px;
+div.row#row{
+  margin-top: 180px;
+  padding: 40px 30px;
 }
 
 
@@ -89,27 +90,60 @@ div.container {
      margin-right: 15px;
 }
 
-/*.navbar-right {
-  float: none !important;;
-}*/
 
-.navbar-form .form-control {
-  width: 400px;
-  display: inline-block;
+.navbar-form  {
+  width: auto;
+  padding-top: 25px;
+  margin-left: inherit;
 }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  text-decoration: underline;
+}
+
+.navbar-collapse ul li {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-collapse ul li a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-brand img {
+  width: 200px;
+  height: 40px;
+}
+
+.navbar-inverse {
+  background-color: #000000;
+}
+
+.input-group {
+  width: 285px;
+  position: static;
+}
+  .navbar-center{
+    /*position: absolute;*/
+    width: 139%;
+    text-align: center;
+    margin: auto;
+}
+
+#searchwidth {
+  width: 500px;
+}
+
 
 /*end of farnoosh css*/
 
 
-#search {
-  margin-top: 20px;
-}
-
-
-#glyph {
-  margin-top: 20px;
-
-/*Styling for search Page*/
+/*Styling for Scott search Page*/
 .roomPic {
   max-width: 320px;
   max-height: 320px;
