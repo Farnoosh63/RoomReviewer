@@ -69,6 +69,38 @@ h1 {
  transition: all 3s ease;
 }
 
+
+/*farnoosh css*/
+body.aboutUs {
+   background-image: none !important;
+}
+
+ul.navbar-nav {
+    float: left;
+    margin: 40px;
+}
+
+div.container {
+  margin-top: 70px;
+}
+
+
+.navbar-nav.navbar-right:last-child {
+     margin-right: 15px;
+}
+
+/*.navbar-right {
+  float: none !important;;
+}*/
+
+.navbar-form .form-control {
+  width: 400px;
+  display: inline-block;
+}
+
+/*end of farnoosh css*/
+
+
 #search {
   margin-top: 20px;
 }
@@ -76,6 +108,7 @@ h1 {
 
 #glyph {
   margin-top: 20px;
+
 /*Styling for search Page*/
 .roomPic {
   max-width: 320px;
@@ -91,6 +124,7 @@ h1 {
   float: left;
 
 }
+
 
 .post-content {
   margin-left: 340px;
