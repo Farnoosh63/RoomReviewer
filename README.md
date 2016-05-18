@@ -1,4 +1,4 @@
-# Room Review
+# Room Reviewer
 
 #### An Application that reviews rooms, May 18, 2016
 
