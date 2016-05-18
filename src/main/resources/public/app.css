@@ -13,6 +13,12 @@ body{
   background-size: cover!important;
 }
 
+#logo {
+  width: 350px;
+  height: 200px;
+  padding: 0;
+}
+
 h1, h2, h3, h4, h5, p{
 font-family: helvetica;
 }
@@ -31,14 +37,7 @@ letter-spacing: 20px;
 font-size: 25px;
 
 }
-/*.welcome{
-  font-size: 17px;
-  height: 600px;
-  width: 550px;
-  float: left;*/
-  /*margin-right: 30px;
-  margin-top: 200px;*/
-/*}*/
+
 
 .login {
 font-size: 17px;
@@ -69,13 +68,19 @@ width: 100%;
 
 #p {
   float:right;
-
 }
 
 
 h1 {
+  font-family:'Biryani', sans-serif;
   text-align: center;
-  font-size: 3.2em;
+  font-size: 4.6em;
+  color:#000066;
+}
+
+p {
+  font-family:'Biryani', sans-serif;
+  font-size: 1.5em;
 }
 
 
@@ -102,7 +107,7 @@ ul.navbar-nav {
 }
 
 div.container {
-  margin-top: 70px;
+  /*margin-top: 70px;*/
 }
 
 
@@ -121,15 +126,6 @@ div.container {
 
 /*end of farnoosh css*/
 
-
-#search {
-  margin-top: 20px;
-}
-
-
-#glyph {
-  margin-top: 20px;
-}
 /*Styling for search Page*/
 
 .roomPic {
