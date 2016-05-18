@@ -1,8 +1,6 @@
 <div class="search">
   <h1>Search Results</h1>
   #foreach ($room in $foundRooms)
-
-
     <div class="post-container">
       <div class="post-thumb"><img class="roomPic" src=$room.getUrl() /></div>
         <div class="post-content">
@@ -13,7 +11,5 @@
           #end
         </div>
     </div>
-
-
   #end
 </div>

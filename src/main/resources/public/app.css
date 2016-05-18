@@ -70,7 +70,7 @@ h1 {
 #magnify-glass {
 }
 
-/*room pics*/
+/*Styling for search Page*/
 .roomPic {
   max-width: 320px;
   max-height: 320px;
@@ -80,6 +80,7 @@ h1 {
 .post-thumb img {
   display: block;
 }
+
 .post-thumb {
   float: left;
 }
@@ -92,7 +93,6 @@ h1 {
     margin: 20px 20px 0 0;
     border: 1px solid #333;
     overflow: auto;
-
 }
 
 .starPic {
