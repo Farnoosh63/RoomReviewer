@@ -166,7 +166,12 @@ div.row#row{
 }
 
 #searchwidth {
-  width: 300px;
+  width: 600px;
+}
+
+#navbar {
+  padding:0;
+  margin-bottom: -134px;
 }
 
 
