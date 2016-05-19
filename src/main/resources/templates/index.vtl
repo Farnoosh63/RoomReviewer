@@ -1,65 +1,22 @@
 <body class="main">
-
-  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-
-
-        <img id="logo" class="navbar-brand" class="img-responsive" src="images/logoFin.png" alt="logo">
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Home</a></li>
-          <li><a href="/aboutUs">About us</a></li>
-          <li><a href="/contact">Contact us</a></li>
-        </ul>
-        <form action="/searchResults" method="get" class="navbar-right">
-          <div class="form-group">
-            <div class="input-group">
-              <input type="text" id="search" class="form-control" for="search" name="search" placeholder="Search this site">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-default">
-                  <span id="glyphSearch" class="glyphicon glyphicon-search"></span>
-                </button>
-              </span>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </nav> -->
-
 <!-- BODY OF INDEX -->
   <div class="container">
     <div class="row">
-      <!-- <div class="col-md-6"> -->
-        <!-- <div class="welcome">
-          <! EMPTY COL-MD-8 FOR RESPONSIVENESS -->
-        <!-- </div> -->
-      <!-- </div> -->
       <div class="col-md-6">
         <div class="login">
-
-          <strong><h2>Welcome to <span class="logoName"> ROOM REVIEWER!</span></h2></strong>
-          <p>Our goal is to provide you with some extra information about the room you may be thinking of renting. Find reviews on rooms, landlords, shared properties and more! We hope you find the place you love and feel like home, even if for a short period of time.<br>
+          <h2><span id="welcome">Welcome to</span><span id="logoName"> ROOM REVIEWER!</span></h2>
+          <p><i>Our goal is to provide you with some extra information about the room you may be thinking of renting</i>. Find reviews on rooms, landlords, shared properties and more! We hope you find the place you love and feel like home, even if for a short period of time.<br>
           We hope to eleminate the mystery behind moving to a new place off the grid or in a new city.
-        <h3>Are you looking for some additional information on that room found online?</h3><br>
-          <p>All the reviews here will sure help you make a decision!<br>
-          Aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h3>Are you looking for some additional information on that room you found online?</h3><br>
+          <p><i>All the reviews here will sure help you make a decision!</i><br>
+          Aliquip ex ea com sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <h3>Or are you looking to share an experience you have had while renting one?</h3><br>
-          <p>Speak it out, we are all ears!<br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
-
+          <p><i>Speak it out, we are all ears!</i><br>
+            Lorem ipsum dolor sit amet, conse tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p>
+        <h3>Login to write a review, or use the 'Search Field' to read reviews (if someone already wrote one on the address you searched)</h3><br>
           <form action="/user/new" method="post">
             <div id="login" class="form-group">
-              <input type="text" id="userName" placeholder="name" for="userName" name= "userName" class="form-control" required>
+              <input type="text" id="userName" placeholder="email" for="userName" name= "userName" class="form-control" required>
             </div>
             <div id="login" class="form-group">
               <input type="text" id="password" placeholder="password" for="password" name= "password" class="form-control" required>
