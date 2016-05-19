@@ -31,10 +31,10 @@ public class App {
       String password = request.queryParams("password");
       User newUser = new User(userName, password);
       newUser.save();
-      System.out.println(newUser.getName());
       response.redirect("http://localhost:4567/user/" + newUser.getId());
       return null;
     });
+
 
     get("/searchResults", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -43,9 +43,8 @@ public class App {
         List<Room> foundRooms = Room.searchRooms("%" + search + "%");
         model.put("foundRooms", foundRooms);
       }
-
-        model.put("template", "templates/search-results.vtl");
-        return new ModelAndView(model, layout);
+      model.put("template", "templates/search-results.vtl");
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
 

@@ -28,13 +28,25 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Room review ");
+    assertThat(pageSource()).contains("Welcome to");
+  }
+
+  @Test
+  public void displayContactPage() {
+    goTo("http://localhost:4567/contact");
+    assertThat(pageSource()).contains("John Doe");
+  }
+
+  @Test
+  public void displayAboutUsPage() {
+    goTo("http://localhost:4567/aboutUs");
+    assertThat(pageSource()).contains("Scott McIntire");
   }
 
   @Test
   public void getUserInfo() {
     goTo("http://localhost:4567");
-    User newUser = new User("Michael Jackson","iAMdeaD");
+    User newUser = new User("Michael Jackson","password");
     newUser.save();
     String userUrl = String.format("http://localhost:4567/user/%d", newUser.getId());
     goTo(userUrl);
@@ -52,8 +64,25 @@ public class AppTest extends FluentTest {
     newRoom.save();
     Review testReview = new Review("The room was aight.", "4", newRoom.getId(), newUser.getId());
     testReview.save();
-    String reviewUrl = String.format("http://localhost:4567/user/review/:id", testReview.getId());
+    String reviewUrl = String.format("http://localhost:4567/user/%d/review/%d", newUser.getId(),  testReview.getId());
     goTo(reviewUrl);
     assertThat(pageSource()).contains("The room was aight.");
   }
+
+  @Test
+  public void searchRoomReview() {
+    goTo("http://localhost:4567");
+    User newUser = new User("Michael Jackson","password");
+    newUser.save();
+    String userUrl = String.format("http://localhost:4567/user/%d", newUser.getId());
+    goTo(userUrl);
+    Room newRoom= new Room("Apartment", "400 SW 6th Ave, Portland, OR, 97202", "http://lorempixel.com/400/200/");
+    newRoom.save();
+    Review testReview = new Review("The room was aight.", "4", newRoom.getId(), newUser.getId());
+    testReview.save();
+    String url = String.format("http://localhost:4567/searchResults?search=Portland");
+    goTo(url);
+    assertThat(pageSource()).contains("The room was aight.");
+  }
+
 }

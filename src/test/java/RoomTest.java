@@ -101,5 +101,15 @@ public class RoomTest {
      assertEquals(null, Room.find(newRoomId));
    }
 
+   @Test
+   public void filter_filterReviews_true() {
+     Room newRoom = new Room("Apartment", "218 Glisan St", "Awesome pad");
+     newRoom.save();
+     Review firstReview = new Review("Twas wiggly", "4", newRoom.getId(), 1);
+     firstReview.save();
+     Review secondReview = new Review("Twas wiggly", "5", newRoom.getId(), 1);
+     secondReview.save();
+     assertEquals(newRoom.filterReviews("5").size(), 1);
+   }
 
 }
