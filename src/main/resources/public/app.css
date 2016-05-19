@@ -88,7 +88,7 @@ ul.navbar-nav {
 
 
 div.row#row{
-  margin-top: 180px;
+  margin-top: 285px;
   padding: 40px 30px;
 }
 
@@ -150,12 +150,29 @@ div.row#row{
   margin-bottom: -134px;
 }
 
+
 #userName {
   width:350px;
 }
 
 #password {
   width: 350px;
+}
+
+
+#rowReview {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 30%;
+
+}
+
+#roomImage {
+  height: 450px;
+  width: 450px;
+  margin-left: 120px;
 }
 
 
@@ -203,7 +220,6 @@ div.row#row{
 .post-container {
 
   margin: 20px 20px 0 0;
-  border: 1px solid #333;
   overflow: auto;
     margin: 20px 20px 0 0;
     overflow: auto;
