@@ -6,6 +6,7 @@ body{
   width:100%;
   height: 1500px!important;
 }
+
 .main {
   background: url(boy-watch.jpg) no-repeat center center fixed;
   width:100%!important;
@@ -20,25 +21,33 @@ body{
 }
 
 h1, h2, h3, h4, h5, p{
-font-family: helvetica;
+font-family: helvetica, arial, sans-serif;
 line-height: 1.7;
+margin-bottom: -2px;
 }
 
-/*.looking {
-  /*text-align: center;*/
-  /*font-size: 25px;
-}*/
 a{
 color: #FFF;
  padding-right: 30px;
 }
-.logoName{
-font-family: cooperplate;
-letter-spacing: 13px;
-font-size: 35px;
+p{
+font-size: 16px;
+}
+h3{
+  font-size: 18px;
+  font-weight: bold;
+}
+h2 #welcome{
+font-size: 24px;
 
 }
 
+#logoName{
+font-family: cooperplate;
+letter-spacing: 10px;
+font-size: 35px;
+font-weight: bold;
+}
 
 .login {
 font-size: 12px;
@@ -48,54 +57,24 @@ margin-top: 280px;
 margin-left: 125%;
 height: 300%;
 width: 120%;
-
 }
 
 .navbar-brand{
-  /*float: left;*/
   height: 130px;
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
 }
+
 .navbar{
   float: right;
   margin: 0;
 }
+
 #userInput{
   float: right;
   width: 100px;
 }
-
-#p {
-  float:right;
-}
-
-
-/*h1 {
-  font-family:'Biryani', sans-serif;
-  text-align: center;
-  font-size: 4.6em;
-  color:#000066;
-}*/
-
-/*p {
-  font-family:'Biryani', sans-serif;
-  font-size: 1.5em;
-}*/
-
-
-#text {
-  -webkit-opacity: 0.80;
- -moz-opacity: 0.80;
- opacity: 0.80;
--webkit-transition: all 3s ease;
- -moz-transition: all 3s ease;
- -ms-transition: all 3s ease;
- -o-transition: all 3s ease;
- transition: all 3s ease;
-}
-
 
 /*farnoosh css*/
 body.aboutUs {
@@ -112,8 +91,6 @@ div.row#row{
   margin-top: 180px;
   padding: 40px 30px;
 }
-
-
 
 .navbar-nav.navbar-right:last-child {
      margin-right: 15px;
@@ -143,7 +120,6 @@ div.row#row{
   padding-top: 0px;
   padding-bottom: 0px;
 }
-
 
 .navbar-brand img {
   width: 200px;
@@ -212,8 +188,13 @@ div.row#row{
 }
 
 .post-container {
+
+  margin: 20px 20px 0 0;
+  border: 1px solid #333;
+  overflow: auto;
     margin: 20px 20px 0 0;
     overflow: auto;
+
 }
 
 .starPic {
@@ -223,12 +204,18 @@ div.row#row{
 
 /*FOOTER*/
 footer {
-  height: 130px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
-  color: black;
+height: 130px;
+padding: 15px 15px;
+font-size: 18px;
+line-height: 20px;
+color: black;
+}
 
+#copyright{
+font-family: cooperplate;
+letter-spacing: 10px;
+color:#FFF;
+font-size: 10px;
 }
 .social:hover {
      -webkit-transform: scale(1.1);
@@ -237,8 +224,6 @@ footer {
  }
  .social {
      -webkit-transform: scale(0.8);
-     /* Browser Variations: */
-
      -moz-transform: scale(0.8);
      -o-transform: scale(0.8);
      -webkit-transition-duration: 0.5s;
