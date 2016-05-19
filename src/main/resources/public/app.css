@@ -145,6 +145,20 @@ div.row#row{
   width: 300px;
 }
 
+#rowReview {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 30%;
+
+}
+
+#roomImage {
+  height: 450px;
+  width: 450px;
+  margin-left: 120px;
+}
 
 /*end of farnoosh css*/
 

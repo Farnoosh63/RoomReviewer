@@ -26,7 +26,8 @@ public class App {
 
     post("/user/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      String userName = request.queryParams("userName");
+      String userNamedefault = request.queryParams("userName");
+      String userName = userNamedefault.substring(0, 1).toUpperCase() + userNamedefault.substring(1);
       String password = request.queryParams("password");
       User newUser = new User(userName, password);
       newUser.save();
