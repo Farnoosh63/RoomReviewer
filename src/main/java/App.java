@@ -101,9 +101,6 @@ public class App {
       Room foundRoom = Room.find(inputtedReview.getRoomId());
       inputtedReview.delete();
       foundRoom.delete();
-      // model.put("user", foundUser);
-      // model.put("room", foundRoom);
-      // model.put("review", inputtedReview);
       response.redirect("/");
       return null;
     });
