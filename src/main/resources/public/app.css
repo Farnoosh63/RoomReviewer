@@ -111,7 +111,7 @@ ul.navbar-nav {
 div.row#row{
   margin-top: 180px;
   padding: 40px 30px;
-
+}
 
 
 
@@ -298,7 +298,7 @@ SOCIAL MEDIA - FERNANDA
 }
 
 #contact-form textarea {
-    height:150px;
+    height:70px;
     resize: none;
 }
 
