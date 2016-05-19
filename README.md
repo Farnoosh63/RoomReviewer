@@ -6,7 +6,7 @@
 
 ## Description
 
-This application lets users write reviews on rooms they are or have rented as well as:
+This application let users write reviews on rooms they are or have rented as well as:
 
 1. search for reviews
 2. add, update, delete a review
