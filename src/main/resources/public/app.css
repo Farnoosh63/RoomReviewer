@@ -420,7 +420,7 @@ input:required, textarea:required {
  }
 
  #user-input-form textarea {
-    height:70px;
+    height:200px;
     resize: none;
  }
 
