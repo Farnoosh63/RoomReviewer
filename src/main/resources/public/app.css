@@ -176,12 +176,26 @@ div.row#row{
 /*Styling for Scott search Page*/
 
 /*Styling for search Page*/
+.search {
+  margin: 250px auto;
+  background-color:#F2F7F9;
+  border: 6px solid #8FB5C1;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border-radius:15px;
+  position:relative;
+}
 
+.search h1 {
+  text-align: center;
+}
 
 .roomPic {
   max-width: 320px;
   max-height: 320px;
   border:1px solid #021a40;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .post-thumb img {
@@ -193,14 +207,12 @@ div.row#row{
 
 }
 
-
 .post-content {
   margin-left: 340px;
 }
 
 .post-container {
     margin: 20px 20px 0 0;
-    border: 1px solid #333;
     overflow: auto;
 }
 
