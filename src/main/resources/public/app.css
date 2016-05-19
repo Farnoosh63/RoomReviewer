@@ -21,32 +21,33 @@ body{
 
 h1, h2, h3, h4, h5, p{
 font-family: helvetica;
+line-height: 1.7;
 }
 
-.looking {
+/*.looking {
   /*text-align: center;*/
-  font-size: 25px;
-}
+  /*font-size: 25px;
+}*/
 a{
 color: #FFF;
  padding-right: 30px;
 }
 .logoName{
 font-family: cooperplate;
-letter-spacing: 20px;
-font-size: 25px;
+letter-spacing: 13px;
+font-size: 35px;
 
 }
 
 
 .login {
-font-size: 17px;
+font-size: 12px;
 margin-top: 280px;
 margin-left: 200px;
 margin-top: 280px;
-margin-left: 100%;
+margin-left: 125%;
 height: 300%;
-width: 100%;
+width: 120%;
 
 }
 
@@ -71,17 +72,17 @@ width: 100%;
 }
 
 
-h1 {
+/*h1 {
   font-family:'Biryani', sans-serif;
   text-align: center;
   font-size: 4.6em;
   color:#000066;
-}
+}*/
 
-p {
+/*p {
   font-family:'Biryani', sans-serif;
   font-size: 1.5em;
-}
+}*/
 
 
 #text {
@@ -423,5 +424,6 @@ input.placeholder-text, textarea.placeholder-text  {
     font-style:italic;
 }
  .checkUs{
+   font-size: 10px;
   color: #FFF;
  }
