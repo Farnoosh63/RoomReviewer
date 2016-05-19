@@ -63,10 +63,20 @@ public class Room {
       return room;
     }
   }
-  public List<Review>  getReviews(){
+  public List<Review> getReviews(){
     try (Connection con = DB.sql2o.open()){
       String reviewsTable = "SELECT * FROM reviews WHERE room_id=:id";
       return con.createQuery(reviewsTable)
+      .addParameter("id", this.id)
+      .executeAndFetch(Review.class);
+    }
+  }
+
+  public List<Review> filterReviews(String filterRating){
+    try (Connection con = DB.sql2o.open()){
+      String reviewsTable = "SELECT * FROM reviews WHERE room_id=:id AND rating=:rating";
+      return con.createQuery(reviewsTable)
+      .addParameter("rating", filterRating)
       .addParameter("id", this.id)
       .executeAndFetch(Review.class);
     }
@@ -99,5 +109,4 @@ public class Room {
         .executeAndFetch(Room.class);
     }
   }
-
 }
