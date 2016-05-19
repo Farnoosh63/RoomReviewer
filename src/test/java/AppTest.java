@@ -28,13 +28,13 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Room review ");
+    assertThat(pageSource()).contains("Welcome to");
   }
 
   @Test
   public void getUserInfo() {
     goTo("http://localhost:4567");
-    User newUser = new User("Michael Jackson","iAMdeaD");
+    User newUser = new User("Michael Jackson","password");
     newUser.save();
     String userUrl = String.format("http://localhost:4567/user/%d", newUser.getId());
     goTo(userUrl);

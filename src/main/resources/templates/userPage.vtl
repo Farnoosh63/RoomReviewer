@@ -1,17 +1,20 @@
-<h1>Create a Review</h1>
-<h2>Welcome $userName.getName()</h2>
+<div id="user-input-form">
+  <h1>Welcome $userName.getName()</h1>
+  <h3>Create a review!</h3>
 <form action="/user/review/new" method="post">
   <input for="userId" name="userId" type="hidden" value="$userName.getId()"></input>
-  <label for="roomType">Room type</label>
-  <select class="form-control" name="roomType" id="roomType">
+
+  <label for="roomType">Room type:  <span class="required">*</span></label>
+  <select name="roomType" id="roomType">
     <option name="roomType" id="roomType" value="apartment">Apartment</option>
     <option name="roomType" id="roomType" value="loft">Loft</option>
     <option name="roomType" id="roomType" value="apartment">Room in a house</option>
   </select>
-  <label for="address">Address</label>
-  <input class="form-control"name="address" id="address"></label>
-  <label for="rating">Rating</label>
-  <select class="form-control" name="rating" id="rating">
+
+  <label for="address">Address: <span class="required">*</span></label>
+  <input name="address" id="address"></input>
+  <label for="rating">Rating: <span class="required">*</span></label>
+  <select name="rating" id="rating">
     <option name="rating" selected="selected" disabled>Select a rating:</option>
     <option name="rating" id="rating" value="1.png">1 Star</option>
     <option name="rating" id="rating" value="2.png">2 Star</option>
@@ -19,10 +22,14 @@
     <option name="rating" id="rating" value="4.png">4 Star</option>
     <option name="rating" id="rating" value="5.png">5 Star</option>
   </select>
-  <label for="image">Upload an Image</label>
-  <input class="form-control" name="image" id="image"></input>
-  <label for="review">Review</label>
-  <input class="form-control" name="review" id="review"></input>
 
-  <button type="submit" class="btn btn-primary">Submit Review</button>
+  <label for="image">Upload an Image: </label>
+  <input name="image" id="image"></input>
+
+  <label for="review">Review:  <span class="required">*</span></label>
+  <input name="review" id="review"></input>
+
+  <button type="submit" id="submit-button">Submit</button>
+  <p id="req-field-desc"><span class="required">*</span> indicates a required field</p>
 </form>
+</div>
