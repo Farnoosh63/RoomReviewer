@@ -94,5 +94,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/user/:id/review/:rid/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Review inputtedReview = Review.find(Integer.parseInt(request.params(":rid")));
+      User foundUser = User.find(Integer.parseInt(request.params(":id")));
+      Room foundRoom = Room.find(inputtedReview.getRoomId());
+      inputtedReview.delete();
+      foundRoom.delete();
+      // model.put("user", foundUser);
+      // model.put("room", foundRoom);
+      // model.put("review", inputtedReview);
+      response.redirect("/");
+      return null;
+    });
   }
 }

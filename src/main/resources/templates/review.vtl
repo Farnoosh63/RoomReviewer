@@ -1,29 +1,24 @@
 <body>
-<div class="container">
-  <div class="row"id="rowReview">
+  <div class="container">
+    <div class="row"id="rowReview">
 
-              <div class="col-md-7">
-                  <img class="img-responsive" id="roomImage" src="$room.getUrl()" alt="room image">
-              </div>
+      <div class="col-md-7">
+        <img class="img-responsive" id="roomImage" src="$room.getUrl()" alt="room image">
+      </div>
 
-              <div class="col-md-4">
-                  <h3>$user.getName()'s Review</h3>
-                  <p style="width:420px">Room Review: $review.getDescription()</p>
-                  <h3>More Details</h3>
-                  <ul>
-                      <li>Room Type: $room.getType()</li>
-                      <li>Room Rating: <img class="starPic" src=/images/$review.getRating()></li>
-                      <li>Room Address: $room.getAddress()</li>
-                  </ul>
-              </div>
+      <div class="col-md-4">
+        <h3>$user.getName()'s Review</h3>
+        <p style="width:420px">Room Review: $review.getDescription()</p>
+        <h3>More Details</h3>
+        <ul>
+          <li>Room Type: $room.getType()</li>
+          <li>Room Rating: <img class="starPic" src=/images/$review.getRating()></li>
+          <li>Room Address: $room.getAddress()</li>
+        </ul>
+        <a href="/user/$user.getId()/review/$review.getId()/delete" type="button" class="btn btn-danger">Delete This review</a>
+      </div>
 
-          </div>
-</div>
+    </div>
+  </div>
 
-  <!-- <h1>$user.getName()'s Review</h1>
-  <h3>Room Type: $room.getType()</h3>
-  <h3>Room Review: $review.getDescription()</h3>
-  <h3>Room Rating: <img class="starPic" src=/images/$review.getRating()></h3>
-  <h3>Room Picture: <img class="roomPic" src="$room.getUrl()"></h3>
-  <h3>Room Address: $room.getAddress()</h3> -->
 </body>
