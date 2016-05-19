@@ -32,7 +32,7 @@ If while using this application you run into any issues or have questions, ideas
 
 * java
 * Spark, Gradle, jUnit, sql2o, postgresql, Velocity, Fluentlenium-core
-* CSS, HTML, Javascript, Bootstrap
+* CSS, HTML, Javascript, jQuery, Bootstrap
 
 
 ### License
