@@ -1,12 +1,13 @@
+<body class="aboutUs">
 <div class="search">
-  <h1>Search Results</h1>
+  <!-- <h1>Search Results</h1> * Fernanda commentted out after 5pm -->
   #foreach ($room in $foundRooms)
     <div class="post-container">
       <div class="post-thumb"><img class="roomPic" src=$room.getUrl() /></div>
         <div class="post-content">
           <h4>Type: $room.getType()</h4>
           <h4>Address: $room.getAddress()</h4>
-          
+
           #foreach ($review in $room.getReviews())
             <img class="starPic" src=/images/$review.getRating()><h4>Review: $review.getDescription()</h4>
           #end
@@ -15,3 +16,4 @@
     </div>
   #end
 </div>
+</body>
