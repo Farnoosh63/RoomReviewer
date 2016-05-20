@@ -1,21 +1,6 @@
 <body class="aboutUs">
 <div class="search">
 
-  <h3>Filter reviews by rating:</h3>
-
-  <form action='/venues/search' method='post'>
-  <input id="band_search_id" name="band_search_id" type="hidden" value="$band.getId()">
-
-
-  <select id='band-search' name='band-search' type='text'>
-    <option value="placeholder" required>Select band</option>
-    #foreach($band in $allBands)
-    <option value="$band.getId()"> $band.getName() </option>
-    #end
-  </select>
-  <button type="submit"  id="btn-search" class="btn btn-info">Search</button>
-</form>
-
   <!-- <h1>Search Results</h1> * Fernanda commentted out after 5pm -->
   #foreach ($room in $foundRooms)
     <div class="post-container">
