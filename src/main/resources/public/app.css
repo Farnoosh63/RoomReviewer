@@ -54,9 +54,9 @@ font-weight: bold;
 .login {
 font-size: 12px;
 margin-top: 280px;
-margin-left: 200px;
+/*margin-left: 200px;*/
 margin-top: 280px;
-margin-left: 125%;
+margin-left: 60%;
 height: 300%;
 width: 120%;
 color:#0C0000;
@@ -154,6 +154,16 @@ div.row#row{
   margin-bottom: -134px;
 }
 
+
+#userName {
+  width:350px;
+}
+
+#password {
+  width: 350px;
+}
+
+
 #rowReview {
   position: relative;
   min-height: 1px;
@@ -168,6 +178,7 @@ div.row#row{
   width: 450px;
   margin-left: 120px;
 }
+
 
 /*end of farnoosh css*/
 
@@ -470,4 +481,34 @@ input:required, textarea:required {
 
  #req-field-desc {
     font-style:italic;
+ }
+
+
+ /*RESPONSIVE WEB DESIGN! */
+
+ @media screen and (max-width: 1034px) {
+   .login {
+   font-size: 12px;
+   margin-right: 5000px;
+   }
+
+   #searchwidth {
+     width: 275px;
+   }
+
+ }
+
+ @media screen and (max-width: 767px) {
+
+   #searchwidth {
+     display: none;
+     width: 0;
+   }
+
+
+   #glyph {
+     display: none;
+     width: 0;
+   }
+
  }
